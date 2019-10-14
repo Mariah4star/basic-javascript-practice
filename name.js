@@ -23,12 +23,27 @@ people.forEach((person) => {
     let personDiv = document.createElement('div')
     let name = document.createElement('h1')
     let gender = document.createElement('p')
+    let pic = document.createElement('img')
+
+   let charNum = getCharNumber(person.url)
 
     name.textContent = person.name
     gender.textContent = person.gender
+    pic.src = 'https://starwars-visualguide.com/assets/img/chaaracters/${charNum}.jpg'
 
     personDiv.appendChild(name)
     personDiv.appendChild(gender)
+    personDiv.appendChild(pic)
 
-    mainArea.appendChild(person)
+    mainArea.appendChild(personDiv)
 } );
+
+function getCharNumber(charURL) {
+  let end = char.URL.lastIndexOf('/')
+  let charID = charURL.substring(end -2, end)
+  if (charID.indexOf('/') == -1) {
+  return charID.slice[1,2]
+  } else {
+    return charID
+  }
+}

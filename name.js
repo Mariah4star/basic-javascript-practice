@@ -41,9 +41,15 @@ people.forEach((person) => {
 function getCharNumber(charURL) {
   let end = char.URL.lastIndexOf('/')
   let charID = charURL.substring(end -2, end)
-  if (charID.indexOf('/') == -1) {
+  if (charID.indexOf('/') !== -1) {
   return charID.slice[1,2]
   } else {
     return charID
   }
 }
+
+const maleCharacters = people.filter(person => person.gender === 'male')
+const femaleCharacters = people.filter(person => person.gender === 'female')
+
+console.log(maleCharacters)
+console.log(femaleCharacters)

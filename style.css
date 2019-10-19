@@ -17,13 +17,3 @@ main {
     padding: 10px;
     background-color: rgb(14, 14, 56);
   }
-
-@media (max-width: 30.625em) {
-  .main{
-    padding: 6rem 1rem;
-  }
-
-  .main {
-    grid-template-columns: 1fr;
-  }
-}

@@ -7,9 +7,8 @@ h1 {
 
 main {
     display: grid;
-    justify-content: flex;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 1rem;
+    grid-gap: 2rem;
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;

@@ -29,7 +29,7 @@ people.forEach((person) => {
 
     name.textContent = person.name
     gender.textContent = person.gender
-    pic.src = 'https://starwars-visualguide.com/assets/img/chaaracters/${charNum}.jpg'
+    pic.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
 
     personDiv.appendChild(name)
     personDiv.appendChild(gender)
@@ -39,10 +39,10 @@ people.forEach((person) => {
 } );
 
 function getCharNumber(charURL) {
-  let end = char.URL.lastIndexOf('/')
+  let end = charURL.lastIndexOf('/')
   let charID = charURL.substring(end -2, end)
   if (charID.indexOf('/') !== -1) {
-  return charID.slice[1,2]
+  return charID.slice(1,2)
   } else {
     return charID
   }

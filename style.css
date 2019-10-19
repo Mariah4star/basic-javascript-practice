@@ -1,13 +1,30 @@
+html {
+    color: rgb(219, 219, 219);
+}
 h1 {
-    color: navy;
+    color: rgb(255, 255, 115);
 }
 
 main {
     display: grid;
+    justify-content: flex;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 2rem;
+    grid-gap: 1rem;
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
     margin-bottom: 6rem;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    background-color: rgb(14, 14, 56);
   }
+
+@media (max-width: 30.625em) {
+  .main{
+    padding: 6rem 1rem;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+  }
+}

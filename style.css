@@ -1,9 +1,6 @@
 html {
     color: rgb(219, 219, 219);
 }
-h1 {
-    color: rgb(255, 255, 115);
-}
 
 main {
     display: grid;
@@ -16,4 +13,29 @@ main {
     grid-template-columns: auto auto;
     padding: 10px;
     background-color: rgb(14, 14, 56);
+    color: rgb(255, 255, 115);
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 2rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+    grid-template-columns: auto auto;
+    background-image: url("/assets/star-wars-star-background-4.jpg");
+  }
+
+  area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 2rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+    grid-template-columns: auto auto;
+    background-color: rgba(14,14,56);
   }

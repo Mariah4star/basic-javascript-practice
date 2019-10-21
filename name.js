@@ -1,9 +1,10 @@
 import {films} from "./assets/films.js"
 import {people} from "./assets/people.js"
+import {planets} from "./assets/planets.js"
 
 console.log('I am javascipt running in your page')
 
-let mainArea = document.querySelector('main')
+let sectionArea = document.querySelector('section')
 
 films.forEach(function(film) {
     let filmDiv = document.createElement('div')
@@ -16,9 +17,10 @@ films.forEach(function(film) {
     filmDiv.appendChild(filmTitle)
     filmDiv.appendChild(filmCrawl)
 
-    mainArea.appendChild(filmDiv)
+    sectionArea.appendChild(filmDiv)
   });
-  
+
+  let mainArea = document.querySelector('main')
 people.forEach((person) => {
     let personDiv = document.createElement('div')
     let name = document.createElement('h1')
@@ -53,3 +55,22 @@ const femaleCharacters = people.filter(person => person.gender === 'female')
 
 console.log(maleCharacters)
 console.log(femaleCharacters)
+
+let areaArea = document.querySelector('area')
+
+planets.forEach(function(planet) {
+    let planetDiv = document.createElement('div')
+    let name = document.createElement('h1')
+    let population = document.createElement('p')
+    let pic = document.createElement('img')
+
+    name.textContent = planet.name
+    population.textContent = planet.population
+    pic.src = `https://swapi.co/api/planets`
+
+    planetDiv.appendChild(name)
+    planetDiv.appendChild(population)
+    planetDiv.appendChild(pic)
+
+    areaArea.appendChild(planetDiv)
+  });

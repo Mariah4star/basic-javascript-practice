@@ -2,7 +2,7 @@ import {films} from "./assets/films.js"
 import {people} from "./assets/people.js"
 import {planets} from "./assets/planets.js"
 
-console.log('I am javascipt running in your page')
+/*console.log('I am javascipt running in your page')
 
 let sectionArea = document.querySelector('section')
 
@@ -18,7 +18,7 @@ films.forEach(function(film) {
     filmDiv.appendChild(filmCrawl)
 
     sectionArea.appendChild(filmDiv)
-  });
+  });*/
 
   let mainArea = document.querySelector('main')
 people.forEach((person) => {
@@ -50,15 +50,45 @@ function getCharNumber(charURL) {
   }
 }
 
+const allDivs = Array.from(document.querySelectorAll('div'))
+console.log(allDivs)
+const mainHeader = document.querySelector('header')
+
+let maleButton = document.createElement('button')
+maleButton.textContent = 'Male Characters'
+maleButton.addEventListener('click', () => {
+  femaleCharacters.forEach(character => {
+ let matchedDiv = allDivs.find(oneDiv => {
+    return oneDiv.firstChild.textContent === character.name
+  })
+  matchedDiv.setAttribute("style", "display: none;" )
+  })
+})
+
+
+let femaleButton = document.createElement('button')
+femaleButton.textContent = 'Female Characters'
+femaleButton.addEventListener('click', () => {
+  maleCharacters.forEach(character => {
+ let matchedDiv = allDivs.find(oneDiv => {
+    return oneDiv.firstChild.textContent === character.name
+  })
+  matchedDiv.setAttribute("style", "display: none;" )
+  })
+})
+
+mainHeader.appendChild(maleButton)
+mainHeader.appendChild(femaleButton)
+
 const maleCharacters = people.filter(person => person.gender === 'male')
 const femaleCharacters = people.filter(person => person.gender === 'female')
+const otherCharacters = people.filter(person => person.gender )
 
 console.log(maleCharacters)
 console.log(femaleCharacters)
 
-let areaArea = document.querySelector('area')
 
-planets.forEach(function(planet) {
+/*planets.forEach(function(planet) {
     let planetDiv = document.createElement('div')
     let name = document.createElement('h1')
     let population = document.createElement('p')
@@ -66,11 +96,11 @@ planets.forEach(function(planet) {
 
     name.textContent = planet.name
     population.textContent = planet.population
-    pic.src = `https://swapi.co/api/planets`
+    pic.src = 
 
     planetDiv.appendChild(name)
     planetDiv.appendChild(population)
     planetDiv.appendChild(pic)
 
-    areaArea.appendChild(planetDiv)
-  });
+    mainArea.appendChild(planetDiv)
+  }); */
